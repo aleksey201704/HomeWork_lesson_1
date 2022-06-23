@@ -1,0 +1,4 @@
+﻿Build started...
+1>------ Build started: Project: HomeWork_lesson_2, Configuration: Debug Any CPU ------
+1>HomeWork_lesson_2 -> C:\Users\My Semya\source\repos\HomeWork_lesson_1\HomeWork_lesson_2\bin\Debug\net5.0\HomeWork_lesson_2.dll
+========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========
