@@ -52,6 +52,7 @@ namespace Modul_6
         }
     }
 
+
     abstract class Device
     {
 
