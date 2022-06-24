@@ -51,8 +51,6 @@ namespace Modul_6
             }
         }
     }
-
-
     abstract class Device
     {
 
@@ -121,7 +119,6 @@ namespace Modul_6
             Console.WriteLine($"Обьем Teapot: {VolumTeapot}");
         }
     }
-
     class Microwave : Device
     {
         public int power { get; set; }
@@ -150,8 +147,82 @@ namespace Modul_6
         }
 
     }
+    //=======================Musical Instrument ==========================
+   abstract class Musical_instrument
+    {
+        public string Manufacturer { get; set; }
+        public string Name { get; set; }
+        public Musical_instrument(string name,string manufacture)
+        {
+            this.Name = name;
+            this.Manufacturer = manufacture;
+        }
+        abstract public void Sound();
+        abstract public void Show();
+        abstract public void Desc();
+        abstract public void History();
+
+    }
+    class Violin: Musical_instrument
+    {
+        public int Cord { get; set; }
+       public Violin(int cord,string name,string manufacture) : base(name, manufacture)
+        {
+            this.Cord = cord;
+        }
+
+        public override void Sound()
+        {
+            Console.WriteLine("Sound Violin");
+        }
+
+        public override void Show()
+        {
+            Console.WriteLine($"Show: {Name}");
+        }
+
+        public override void Desc()
+        {
+            Console.WriteLine("----------------ОПисание------------");
+            Console.WriteLine($"Производитель: {Manufacturer}");
+            Console.WriteLine($"Имя инструмента: {Name}");
+            Console.WriteLine($"Количество струн: {Cord}");
+
+        }
+
+        public override void History()
+        {
+            Console.WriteLine(" Имеет народное происхождение, " +
+                "современный вид приобрела в XVI веке, " +
+                "получила широкое распространение в XVII веке. ");
+        }
 
 
+    }
+    //====================================================================
+    
+    //========================= Worker   =================================
+    abstract class Worker
+    {
+        public int Age { get; set; }
+        public string Gender { get; set; }
+
+        public Worker(int age, string gender)
+        {
+            this.Age =age;
+            this.Gender = gender;
+        }
+        abstract public void Print();
+    }
+    class President:Worker
+    {
+        public President(int age, string gender) : base(age, gender) { }
+        public override void Print()
+        {
+            Console.WriteLine("President");
+        }
+    }
+    //====================================================================
 
     
     class Program
@@ -185,7 +256,14 @@ namespace Modul_6
             microwave.Desc();
             *///================================================================
             //================================ 3 task=========================
+            Musical_instrument skripka = new Violin(4, "Best", "Italy");
+            skripka.Show();
+            skripka.Sound();
+            skripka.History();
+            skripka.Desc();
+
             
+           
             //================================================================
         }
     }
